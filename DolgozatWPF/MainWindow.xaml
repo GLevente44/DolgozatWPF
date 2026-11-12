@@ -1,0 +1,70 @@
+﻿<Window x:Class="DolgozatWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DolgozatWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="228"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="DolgozoEmberek" Grid.Row="0" Margin="0,0,0,10">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Név" Width="105"/>
+
+                <DataGridTextColumn Header="Életkor" Width="58"/>
+
+                <DataGridTextColumn Header="Pontszám" Width="76"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="1" Margin="0,20,0,0" HorizontalAlignment="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="55"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+
+                <TextBlock Text="Név:" VerticalAlignment="Center" Margin="5,0,8,0"/>
+
+                <TextBox x:Name="Name" Width="186" Height="31" VerticalContentAlignment="Center"/>
+
+                <TextBlock Text="Életkor:" VerticalAlignment="Center" Margin="18,0,8,0"/>
+
+                <TextBox x:Name="Age" Width="60" Height="35" VerticalContentAlignment="Center"/>
+
+                <TextBlock Text="Pontszám:" VerticalAlignment="Center" Margin="18,0,8,0"/>
+
+                <TextBox x:Name="Point" Width="62" Height="31" VerticalContentAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center">
+                
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnHozzaadas" Content="Hozzáadás" Width="125" Height="39" Margin="-410,0,10,0" Click="btnHozzaadas_Click"/>
+
+                    <Button x:Name="btnMentes" Content="Mentés" Width="125" Height="39" Click="btnMentes_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
